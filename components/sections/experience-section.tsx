@@ -6,7 +6,6 @@ import { SpotlightCard } from "@/components/ui/spotlight-card";
 import { Calendar, ChevronRight, Briefcase } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-
 type Experience = {
     company: string;
     companyLink?: string;
@@ -20,32 +19,51 @@ type Experience = {
 const  experiences: Experience[] = [
     {
         company: "Proxym",
-
-        position: "Software Engineer",
-        duration: "Feb 2025 - Present",
+        position: "AI Software Engineer Intern",
+        duration: "Feb 2025 - Aug 2025",
         description: [
-            "Designed and implemented an AI-powered automation solution to streamline software ticket creation from Product Requirements Documentation (PRD) files.",
-            "Architected a polyglot microservices system leveraging Spring Boot and FastAPI ecosystems for optimal performance and scalability.",
-            "Successfully processed documentation files up to 180 pages, reducing sprint planning time by approximately 4 hours per iteration."
+            "Engineered an innovative application automating the transformation of software requirements into structured ClickUp tasks.",
+            "Designed and developed a robust, polyglot microservices backend with OAuth 2.0/OIDC authentication.",
+            "Built a responsive Next.js application featuring a multi-step wizard interface with real-time validation."
         ],
-        technologies:["Spring Boot","LangChain","FastAPI","Python","React","PostgreSQL","Docker"]
-
+        technologies:["Next.js", "Spring Boot", "FastAPI", "Python", "OAuth 2.0", "MinIO", "Docker"]
 
     },
+    {
+        company: "Neuralbey",
+        position: "Software Engineer Intern",
+        duration: "Jul 2024 - Sep 2024",
+        description: [
+            "Architected and implemented microservices applications using Spring Boot and Spring Cloud.",
+            "Designed an event-driven system utilizing Apache Kafka for scalable message processing.",
+            "Implemented robust security measures through KeyCloak IAM and OAuth2 protocols.",
+            "Containerized applications and managed deployment using Docker and Kubernetes."
+        ],
+        technologies:["Spring Boot", "Spring Cloud", "Apache Kafka", "KeyCloak", "OAuth2", "Docker", "Kubernetes"]
+
+    },
+    {
+        company: "Telecom TN",
+        position: "ML Engineer Intern",
+        duration: "Jun 2023 - Jul 2023",
+        description: [
+            "Architected an end-to-end ML pipeline with automated data ingestion from an SAP Data Warehouse.",
+            "Designed scalable workflows for feature engineering and model training using scikit-learn.",
+            "Developed and deployed an ML model as a full-stack web application using a FastAPI backend and React frontend."
+        ],
+        technologies:["Machine Learning", "FastAPI", "React", "Scikit-learn", "SAP", "Python"]
+    }
 ];
 
-
 export function ExperienceSection() {
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(0); 
 
   const toggleExpand = (index: number) => {
     setExpandedIndex(expandedIndex === index ? null : index);
   };
 
   return (
-    <section id="experience" 
-    
-    className="w-full max-w-2xl pt-10">
+    <section id="experience" className="w-full max-w-2xl pt-10">
       <div className="space-y-8">
         <div className="flex flex-col items-start justify-start gap-5">
           <HeadingBadge
