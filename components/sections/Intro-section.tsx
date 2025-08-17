@@ -21,21 +21,20 @@ export function IntroSection() {
           </h1>
 
           {/* First paragraph color updated */}
-          <p className="text-xl sm:text-2xl font-medium text-black dark:text-white max-w-2xl">
-            A Full Stack Developer passionate about crafting seamless digital
-            experiences
+          <p className="text-xl sm:text-2xl font-medium text-black dark:text-[#A1A1AA] max-w-2xl">
+            A Software Engineer passionate about building intelligent and scalable applications.
           </p>
 
-          {/* Second paragraph color updated */}
-         <p className="text-sm sm:text-base font-normal text-[#737373] dark:text-[#A1A1AA] max-w-2xl">
-  I specialize in building web apps with{" "}
-  <span className="text-[#08090a] dark:text-slate-100 font-semibold">
-    React, JavaScript, Tailwind CSS, Node.js and more.
-  </span>{" "}
-  Always excited to tackle new challenges where I can create value and
-  grow as a coder. Let&apos;s connect if you&apos;ve got a project
-  that could use my skills!
-</p>
+        {/* Generalized Main Paragraph */}
+          <p className="text-sm sm:text-base font-normal text-[#737373] dark:text-[#A1A1AA] max-w-2xl">
+            I specialize in developing full-stack applications, with a focus on leveraging{" "}
+            <span className="text-[#08090a] dark:text-slate-100 font-semibold">
+              Artificial Intelligence
+            </span>{" "}
+            to build smarter software. I am passionate about creating scalable backend systems and responsive user interfaces using modern,{" "}
+            <span className="text-[#08090a] dark:text-slate-100 font-semibold">
+              Cloud-Native </span> technologies. Always excited to tackle new challenges where I can create value and grow as a developer. Let&apos;s connect if you&apos;ve got a project that could use my skills!
+          </p>
 
 
 
