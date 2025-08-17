@@ -1,16 +1,13 @@
 import { IntroSection } from "@/components/sections/Intro-section";
+import { SkillsSection } from "@/components/sections/skills-sections";
 
 export default function Home() {
   return (
      <main className="flex min-h-screen flex-col items-center justify-between pt-40">
           <IntroSection />
       <hr className="w-full border-gray-300/90 dark:border-gray-300/10 mt-10" />
-
-
-      <div id="skills" className="h-screen w-full pt-24">
-        <h1 className="text-4xl font-bold">Skills Section</h1>
-        <p>This is where the skills content will go.</p>
-      </div>
+          <SkillsSection/>
+      <hr className="w-full border-gary-300/90 dark:border-gray-300/10 mt-10"/>
 
       <div id="projects" className="h-screen w-full pt-24">
         <h1 className="text-4xl font-bold">Projects Section</h1>
