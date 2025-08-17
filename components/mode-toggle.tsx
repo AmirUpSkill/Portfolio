@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 
 import { cn } from "@/lib/utils";
-import { MoonIcon } from "lucide-react";
+import { MoonIcon, SunIcon } from "lucide-react";
 
 export const ModeToggle = () => {
   const { theme, setTheme } = useTheme();
@@ -15,7 +15,11 @@ export const ModeToggle = () => {
   }, []);
 
   if (!mounted) {
-    return <div className="fixed bottom-5 right-5 w-[1.2rem] h-[1.2rem]" />;
+    return (
+      <div className="relative flex items-center justify-center w-10 h-10 bg-transparent">
+        <div className="size-[1.5rem] bg-gray-300 dark:bg-gray-600 rounded-full animate-pulse" />
+      </div>
+    );
   }
 
   return (
@@ -23,18 +27,17 @@ export const ModeToggle = () => {
       <button
         type="button"
         className={cn(
-          "relative flex items-center justify-center w-10 h-10 bg-transparent"
+          "relative flex items-center justify-center w-10 h-10 bg-transparent transition-colors duration-200"
         )}
         aria-label="Toggle theme"
-        title={`${theme === "dark" ? "light" : "dark"} mode`}
+        title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
         onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
       >
-        <MoonIcon
-          className={cn(
-            "size-[1.5rem]",
-            theme === "dark" ? "text-white" : "text-gray-700"
-          )}
-        />
+        {theme === "dark" ? (
+          <SunIcon className="size-[1.5rem] text-white" />
+        ) : (
+          <MoonIcon className="size-[1.5rem] text-gray-700" />
+        )}
       </button>
     </div>
   );

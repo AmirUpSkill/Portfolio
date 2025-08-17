@@ -122,18 +122,22 @@ export function Navbar({
       <nav
         className={cn(
           "fixed top-3 sm:top-6 left-1/2 -translate-x-1/2 z-50 flex items-center justify-between w-[95%] max-w-[670px] py-2 px-4 rounded-sm transition-all duration-300 overflow-hidden",
-          "bg-white/60 dark:bg-[#0a0a0a]/60 backdrop-blur-sm border border-gray-200/60 dark:border-gray-500/10"
+          "bg-white/60 backdrop-blur-sm border border-gray-200/60"
         )}
       >
         <div className="flex-shrink-0 relative">
-          <div className="w-9 h-9 rounded-full bg-[#08090a] dark:bg-slate-600"></div>
+          <div className="relative flex items-center justify-center w-10 h-10 bg-transparent">
+            <div className="size-[1.5rem] bg-gray-300 rounded-full animate-pulse" />
+          </div>
         </div>
         <div className="hidden sm:flex items-center space-x-1">
           {sections.map((section) => (
-            <div key={section.id} className="px-3 py-1.5 text-sm rounded-full" />
+            <div key={section.id} className="px-3 py-1.5 text-sm rounded-full bg-gray-100 animate-pulse" />
           ))}
         </div>
-        <div className="sm:hidden relative z-50 w-10 h-10"></div>
+        <div className="sm:hidden relative z-50 w-10 h-10">
+          <div className="w-6 h-6 bg-gray-300 rounded animate-pulse" />
+        </div>
       </nav>
     );
   }
@@ -149,15 +153,17 @@ export function Navbar({
         )}
         onMouseMove={handleMouseMove}
       >
-        <div
-          className="pointer-events-none absolute inset-0 opacity-30"
-          style={{
-            background:
-              theme === "dark"
-                ? `radial-gradient(300px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(100, 116, 139, 0.15), transparent 40%)`
-                : `radial-gradient(300px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(8, 9, 10, 0.15), transparent 40%)`,
-          }}
-        />
+        {mounted && (
+          <div
+            className="pointer-events-none absolute inset-0 opacity-30"
+            style={{
+              background:
+                theme === "dark"
+                  ? `radial-gradient(300px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(100, 116, 139, 0.15), transparent 40%)`
+                  : `radial-gradient(300px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(8, 9, 10, 0.15), transparent 40%)`,
+            }}
+          />
+        )}
 
         <div className="absolute inset-0 rounded-sm opacity-20 blur-sm">
           <div className="absolute inset-px rounded-sm border border-slate-200/20" />
