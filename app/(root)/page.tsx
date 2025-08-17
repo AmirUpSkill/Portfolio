@@ -1,17 +1,11 @@
+import { IntroSection } from "@/components/sections/Intro-section";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center p-4 sm:p-24">
-      {/* 
-        These placeholder divs are essential for the navbar's scrolling to work.
-        Each 'id' corresponds to a link in your Navbar component.
-        'h-screen' makes each section take up the full screen height for testing.
-      */}
+     <main className="flex min-h-screen flex-col items-center justify-between pt-40">
+          <IntroSection />
+      <hr className="w-full border-gray-300/90 dark:border-gray-300/10 mt-10" />
 
-      <div id="intro" className="h-screen w-full pt-24">
-        <h1 className="text-4xl font-bold">Intro Section</h1>
-        <p>This is where the intro content will go.</p>
-      </div>
 
       <div id="skills" className="h-screen w-full pt-24">
         <h1 className="text-4xl font-bold">Skills Section</h1>
